@@ -3,7 +3,7 @@
 /* eslint-disable */
 
 import type { active } from './active.ts';
-import type { name } from './name.ts';
+import type { name } from './Name.ts';
 import type { organization_id } from './organization_id.ts';
 import type { short_name } from './short_name.ts';
 

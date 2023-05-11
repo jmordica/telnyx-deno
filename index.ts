@@ -451,7 +451,7 @@ export type { MobileOperatorNetworksPreferencesResponse } from './models/MobileO
 export { Money } from './models/Money.ts';
 export type { Monochrome } from './models/Monochrome.ts';
 //export type { Name } from './models/Name.ts';
-export type { name } from './models/name.ts';
+export type { name } from './models/Name.ts';
 export type { Network } from './models/Network.ts';
 export type { NetworkCreate } from './models/NetworkCreate.ts';
 export type { NetworkInterface } from './models/NetworkInterface.ts';

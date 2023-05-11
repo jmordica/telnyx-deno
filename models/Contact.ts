@@ -3,7 +3,7 @@
 /* eslint-disable */
 
 import type { Email } from './Email.ts';
-import type { Name } from './Name.ts';
+import type { name } from './Name.ts';
 import type { Organization } from './Organization.ts';
 import type { Phone } from './Phone.ts';
 import type { Url } from './Url.ts';
@@ -23,7 +23,7 @@ export type Contact = {
      */
     emails?: Array<Email>;
     ims?: Array<string>;
-    name?: Name;
+    name?: name;
     org?: Organization;
     /**
      * Contact phone number(s)
