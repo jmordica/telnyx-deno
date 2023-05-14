@@ -1,4 +1,112 @@
-import * as Tnx from "./index.ts";
+import {
+  Configuration,
+  CallCommandsApi,
+  AccessTokensApi,
+  AdvancedOptInOptOutApi,
+  AuthenticationProvidersApi,
+  AutoResponseSettingsApi,
+  AutoresponseConfigsApi,
+  BillingApi,
+  BillingGroupsApi,
+  BrandsApi,
+  BucketApi,
+  BulkCredentialsApi,
+  BulkPhoneNumberCampaignsApi,
+  BulkSoleProprietorCreationApi,
+  BusinessIdentityApi,
+  CDRUsageReportsApi,
+  CSVDownloadsApi,
+  CallControlApplicationsApi,
+  CallInformationApi,
+  CallRecordingsApi,
+  CampaignApi,
+  ChannelZonesApi,
+  ConferenceCommandsApi,
+  ConnectionsApi,
+  CredentialConnectionsApi,
+  CredentialsApi,
+  CustomerServiceRecordApi,
+  DebuggingApi,
+  DefaultApi,
+  DetailRecordsApi,
+  DialogflowIntegrationApi,
+  DocumentsApi,
+  DynamicEmergencyAddressesApi,
+  DynamicEmergencyEndpointsApi,
+  EnumApi,
+  ErrorApi,
+  FQDNConnectionsApi,
+  GlobalIPsApi,
+  IPAddressesApi,
+  IPConnectionsApi,
+  IPsApi,
+  InboundChannelsApi,
+  InventoryLevelApi,
+  MDRDetailReportsApi,
+  MDRUsageReportsApi,
+  ManagedAccountsApi,
+  MediaStorageAPIApi,
+  MessagesApi,
+  MessagingHostedNumberApi,
+  MessagingProfilesApi,
+  MessagingTollfreeVerificationApi,
+  MessagingTollfreeVerificationsApi,
+  MessagingURLDomainsApi,
+  MobileOperatorNetworksApi,
+  NetworksApi,
+  NotificationsApi,
+  NumberBackgroundJobsApi,
+  NumberBlockOrdersApi,
+  NumberBlocksBackgroundJobsApi,
+  NumberConfigurationsApi,
+  NumberLookupApi,
+  NumberOrderDocumentsApi,
+  NumberOrdersApi,
+  NumberPortoutApi,
+  NumberReservationsApi,
+  NumberSearchApi,
+  OTAUpdatesApi,
+  ObjectApi,
+  OutboundVoiceProfilesApi,
+  PhoneNumberCampaignsApi,
+  PhoneNumberPortingApi,
+  PortingOrderApi,
+  PrivateWirelessGatewaysApi,
+  ProgrammableFaxApplicationsApi,
+  ProgrammableFaxCommandsApi,
+  PublicInternetGatewaysApi,
+  PushCredentialsApi,
+  QueueCommandsApi,
+  RecordingsCommandsApi,
+  RegionsApi,
+  RegisterCallApi,
+  ReportingApi,
+  ReportsApi,
+  RequirementTypesApi,
+  RequirementsApi,
+  RoomCompositionsApi,
+  RoomParticipantsApi,
+  RoomRecordingsApi,
+  RoomSessionsApi,
+  RoomsApi,
+  RoomsClientTokensApi,
+  SIMCardActionsApi,
+  SIMCardGroupActionsApi,
+  SIMCardGroupsApi,
+  SIMCardOrdersApi,
+  SIMCardsApi,
+  SharedCampaignsApi,
+  ShortCodesApi,
+  TeXMLApplicationsApi,
+  TeXMLRESTCommandsApi,
+  V2Api,
+  VerifiedCallsDisplayProfileApi,
+  VerifiedNumbersApi,
+  VerifyApi,
+  VirtualCrossConnectsApi,
+  WDRDetailReportsApi,
+  WebhooksApi
+ } from "./index.ts";
 import {
   TokenProvider,
   AuthMethods,
@@ -16,123 +124,114 @@ class FixedTokenProvider implements TokenProvider {
 }
 
 export class Telnyx {
-  private configuration: Tnx.Configuration;
+  private configuration: Configuration;
   private authMethods: AuthMethods;
-  public callCommands: Tnx.CallCommandsApi;
-  public accessTokens: Tnx.AccessTokensApi;
-  public advancedOptInOptOut: Tnx.AdvancedOptInOptOutApi;
-  public authenticationProviders: Tnx.AuthenticationProvidersApi;
-  public autoResponseSettings: Tnx.AutoResponseSettingsApi;
-  public autoresponseConfigs: Tnx.AutoresponseConfigsApi;
-  public billing: Tnx.BillingApi;
-  public billingGroups: Tnx.BillingGroupsApi;
-  public brands: Tnx.BrandsApi;
-  public bucket: Tnx.BucketApi;
-  public bulkCredentials: Tnx.BulkCredentialsApi;
-  public bulkPhoneNumberCampaigns: Tnx.BulkPhoneNumberCampaignsApi;
-  public bulkSoleProprietorCreation: Tnx.BulkSoleProprietorCreationApi;
-  public businessIdentity: Tnx.BusinessIdentityApi;
-  public cDRUsageReports: Tnx.CDRUsageReportsApi;
-  public cSVDownloads: Tnx.CSVDownloadsApi;
-  public callControlApplications: Tnx.CallControlApplicationsApi;
-  public callInformation: Tnx.CallInformationApi;
-  public callRecordings: Tnx.CallRecordingsApi;
-  public campaign: Tnx.CampaignApi;
-  public channelZones: Tnx.ChannelZonesApi;
-  public conferenceCommands: Tnx.ConferenceCommandsApi;
-  public connections: Tnx.ConnectionsApi;
-  public credentialConnections: Tnx.CredentialConnectionsApi;
-  public credentials: Tnx.CredentialsApi;
-  public customerServiceRecord: Tnx.CustomerServiceRecordApi;
-  public debugging: Tnx.DebuggingApi;
-  public default: Tnx.DefaultApi;
-  public detailRecords: Tnx.DetailRecordsApi;
-  public dialogflowIntegration: Tnx.DialogflowIntegrationApi;
-  public documents: Tnx.DocumentsApi;
-  public dynamicEmergencyAddresses: Tnx.DynamicEmergencyAddressesApi;
-  public dynamicEmergencyEndpoints: Tnx.DynamicEmergencyEndpointsApi;
-  public enum: Tnx.EnumApi;
-  public error: Tnx.ErrorApi;
-  public fQDNConnections: Tnx.FQDNConnectionsApi;
-  public globalIPs: Tnx.GlobalIPsApi;
-  public iPAddresses: Tnx.IPAddressesApi;
-  public iPConnections: Tnx.IPConnectionsApi;
-  public iPs: Tnx.IPsApi;
-  public inboundChannels: Tnx.InboundChannelsApi;
-  public inventoryLevel: Tnx.InventoryLevelApi;
-  public mDRDetailReports: Tnx.MDRDetailReportsApi;
-  public mDRUsageReports: Tnx.MDRUsageReportsApi;
-  public managedAccounts: Tnx.ManagedAccountsApi;
-  public mediaStorageAPI: Tnx.MediaStorageAPIApi;
-  public messages: Tnx.MessagesApi;
-  public messagingHostedNumber: Tnx.MessagingHostedNumberApi;
-  public messagingProfiles: Tnx.MessagingProfilesApi;
-  public messagingTollfreeVerification: Tnx.MessagingTollfreeVerificationApi;
-  public messagingTollfreeVerifications: Tnx.MessagingTollfreeVerificationsApi;
-  public messagingURLDomains: Tnx.MessagingURLDomainsApi;
-  public mobileOperatorNetworks: Tnx.MobileOperatorNetworksApi;
-  public networks: Tnx.NetworksApi;
-  public notifications: Tnx.NotificationsApi;
-  public numberBackgroundJobs: Tnx.NumberBackgroundJobsApi;
-  public numberBlockOrders: Tnx.NumberBlockOrdersApi;
-  public numberBlocksBackgroundJobs: Tnx.NumberBlocksBackgroundJobsApi;
-  public numberConfigurations: Tnx.NumberConfigurationsApi;
-  public numberLookup: Tnx.NumberLookupApi;
-  public numberOrderDocuments: Tnx.NumberOrderDocumentsApi;
-  public numberOrders: Tnx.NumberOrdersApi;
-  public numberPortout: Tnx.NumberPortoutApi;
-  public numberReservations: Tnx.NumberReservationsApi;
-  public numberSearch: Tnx.NumberSearchApi;
-  public oTAUpdates: Tnx.OTAUpdatesApi;
-  public object: Tnx.ObjectApi;
-  public outboundVoiceProfiles: Tnx.OutboundVoiceProfilesApi;
-  public phoneNumberCampaigns: Tnx.PhoneNumberCampaignsApi;
-  public phoneNumberPorting: Tnx.PhoneNumberPortingApi;
-  public portingOrder: Tnx.PortingOrderApi;
-  public privateWirelessGateways: Tnx.PrivateWirelessGatewaysApi;
-  public programmableFaxApplications: Tnx.ProgrammableFaxApplicationsApi;
-  public programmableFaxCommands: Tnx.ProgrammableFaxCommandsApi;
-  public publicInternetGateways: Tnx.PublicInternetGatewaysApi;
-  public pushCredentials: Tnx.PushCredentialsApi;
-  public queueCommands: Tnx.QueueCommandsApi;
-  public recordingsCommands: Tnx.RecordingsCommandsApi;
-  public regions: Tnx.RegionsApi;
-  public registerCall: Tnx.RegisterCallApi;
-  public reporting: Tnx.ReportingApi;
-  public reports: Tnx.ReportsApi;
-  public requirementTypes: Tnx.RequirementTypesApi;
-  public requirements: Tnx.RequirementsApi;
-  public roomCompositions: Tnx.RoomCompositionsApi;
-  public roomParticipants: Tnx.RoomParticipantsApi;
-  public roomRecordings: Tnx.RoomRecordingsApi;
-  public roomSessions: Tnx.RoomSessionsApi;
-  public rooms: Tnx.RoomsApi;
-  public roomsClientTokens: Tnx.RoomsClientTokensApi;
-  public sIMCardActions: Tnx.SIMCardActionsApi;
-  public sIMCardGroupActions: Tnx.SIMCardGroupActionsApi;
-  public sIMCardGroups: Tnx.SIMCardGroupsApi;
-  public sIMCardOrders: Tnx.SIMCardOrdersApi;
-  public sIMCards: Tnx.SIMCardsApi;
-  public sharedCampaigns: Tnx.SharedCampaignsApi;
-  public shortCodes: Tnx.ShortCodesApi;
-  public teXMLApplications: Tnx.TeXMLApplicationsApi;
-  public teXMLRESTCommands: Tnx.TeXMLRESTCommandsApi;
-  public v2: Tnx.V2Api;
-  public verifiedCallsDisplayProfile: Tnx.VerifiedCallsDisplayProfileApi;
-  public verifiedNumbers: Tnx.VerifiedNumbersApi;
-  public verify: Tnx.VerifyApi;
-  public virtualCrossConnects: Tnx.VirtualCrossConnectsApi;
-  public wDRDetailReports: Tnx.WDRDetailReportsApi;
-  public webhooks: Tnx.WebhooksApi;
-  public whatsAppBusinessAccount: Tnx.WhatsAppBusinessAccountApi;
-  public whatsAppContacts: Tnx.WhatsAppContactsApi;
-  public whatsAppDetailReports: Tnx.WhatsAppDetailReportsApi;
-  public whatsAppMedia: Tnx.WhatsAppMediaApi;
-  public whatsAppMessageTemplate: Tnx.WhatsAppMessageTemplateApi;
-  public whatsAppMessages: Tnx.WhatsAppMessagesApi;
-  public whatsAppPhoneNumber: Tnx.WhatsAppPhoneNumberApi;
-  public whatsAppUsageAggregations: Tnx.WhatsAppUsageAggregationsApi;
-  public wireGuardInterfaces: Tnx.WireGuardInterfacesApi;
+  public callCommands: CallCommandsApi;
+  public accessTokens: AccessTokensApi;
+  public advancedOptInOptOut: AdvancedOptInOptOutApi;
+  public authenticationProviders: AuthenticationProvidersApi;
+  public autoResponseSettings: AutoResponseSettingsApi;
+  public autoresponseConfigs: AutoresponseConfigsApi;
+  public billing: BillingApi;
+  public billingGroups: BillingGroupsApi;
+  public brands: BrandsApi;
+  public bucket: BucketApi;
+  public bulkCredentials: BulkCredentialsApi;
+  public bulkPhoneNumberCampaigns: BulkPhoneNumberCampaignsApi;
+  public bulkSoleProprietorCreation: BulkSoleProprietorCreationApi;
+  public businessIdentity: BusinessIdentityApi;
+  public cDRUsageReports: CDRUsageReportsApi;
+  public cSVDownloads: CSVDownloadsApi;
+  public callControlApplications: CallControlApplicationsApi;
+  public callInformation: CallInformationApi;
+  public callRecordings: CallRecordingsApi;
+  public campaign: CampaignApi;
+  public channelZones: ChannelZonesApi;
+  public conferenceCommands: ConferenceCommandsApi;
+  public connections: ConnectionsApi;
+  public credentialConnections: CredentialConnectionsApi;
+  public credentials: CredentialsApi;
+  public customerServiceRecord: CustomerServiceRecordApi;
+  public debugging: DebuggingApi;
+  public default: DefaultApi;
+  public detailRecords: DetailRecordsApi;
+  public dialogflowIntegration: DialogflowIntegrationApi;
+  public documents: DocumentsApi;
+  public dynamicEmergencyAddresses: DynamicEmergencyAddressesApi;
+  public dynamicEmergencyEndpoints: DynamicEmergencyEndpointsApi;
+  public enum: EnumApi;
+  public error: ErrorApi;
+  public fQDNConnections: FQDNConnectionsApi;
+  public globalIPs: GlobalIPsApi;
+  public iPAddresses: IPAddressesApi;
+  public iPConnections: IPConnectionsApi;
+  public iPs: IPsApi;
+  public inboundChannels: InboundChannelsApi;
+  public inventoryLevel: InventoryLevelApi;
+  public mDRDetailReports: MDRDetailReportsApi;
+  public mDRUsageReports: MDRUsageReportsApi;
+  public managedAccounts: ManagedAccountsApi;
+  public mediaStorageAPI: MediaStorageAPIApi;
+  public messages: MessagesApi;
+  public messagingHostedNumber: MessagingHostedNumberApi;
+  public messagingProfiles: MessagingProfilesApi;
+  public messagingTollfreeVerification: MessagingTollfreeVerificationApi;
+  public messagingTollfreeVerifications: MessagingTollfreeVerificationsApi;
+  public messagingURLDomains: MessagingURLDomainsApi;
+  public mobileOperatorNetworks: MobileOperatorNetworksApi;
+  public networks: NetworksApi;
+  public notifications: NotificationsApi;
+  public numberBackgroundJobs: NumberBackgroundJobsApi;
+  public numberBlockOrders: NumberBlockOrdersApi;
+  public numberBlocksBackgroundJobs: NumberBlocksBackgroundJobsApi;
+  public numberConfigurations: NumberConfigurationsApi;
+  public numberLookup: NumberLookupApi;
+  public numberOrderDocuments: NumberOrderDocumentsApi;
+  public numberOrders: NumberOrdersApi;
+  public numberPortout: NumberPortoutApi;
+  public numberReservations: NumberReservationsApi;
+  public numberSearch: NumberSearchApi;
+  public oTAUpdates: OTAUpdatesApi;
+  public object: ObjectApi;
+  public outboundVoiceProfiles: OutboundVoiceProfilesApi;
+  public phoneNumberCampaigns: PhoneNumberCampaignsApi;
+  public phoneNumberPorting: PhoneNumberPortingApi;
+  public portingOrder: PortingOrderApi;
+  public privateWirelessGateways: PrivateWirelessGatewaysApi;
+  public programmableFaxApplications: ProgrammableFaxApplicationsApi;
+  public programmableFaxCommands: ProgrammableFaxCommandsApi;
+  public publicInternetGateways: PublicInternetGatewaysApi;
+  public pushCredentials: PushCredentialsApi;
+  public queueCommands: QueueCommandsApi;
+  public recordingsCommands: RecordingsCommandsApi;
+  public regions: RegionsApi;
+  public registerCall: RegisterCallApi;
+  public reporting: ReportingApi;
+  public reports: ReportsApi;
+  public requirementTypes: RequirementTypesApi;
+  public requirements: RequirementsApi;
+  public roomCompositions: RoomCompositionsApi;
+  public roomParticipants: RoomParticipantsApi;
+  public roomRecordings: RoomRecordingsApi;
+  public roomSessions: RoomSessionsApi;
+  public rooms: RoomsApi;
+  public roomsClientTokens: RoomsClientTokensApi;
+  public sIMCardActions: SIMCardActionsApi;
+  public sIMCardGroupActions: SIMCardGroupActionsApi;
+  public sIMCardGroups: SIMCardGroupsApi;
+  public sIMCardOrders: SIMCardOrdersApi;
+  public sIMCards: SIMCardsApi;
+  public sharedCampaigns: SharedCampaignsApi;
+  public shortCodes: ShortCodesApi;
+  public teXMLApplications: TeXMLApplicationsApi;
+  public teXMLRESTCommands: TeXMLRESTCommandsApi;
+  public v2: V2Api;
+  public verifiedCallsDisplayProfile: VerifiedCallsDisplayProfileApi;
+  public verifiedNumbers: VerifiedNumbersApi;
+  public verify: VerifyApi;
+  public virtualCrossConnects: VirtualCrossConnectsApi;
+  public wDRDetailReports: WDRDetailReportsApi;
+  public webhooks: WebhooksApi;
 
   constructor(bearerToken: string) {
     const fixedTokenProvider = new FixedTokenProvider(bearerToken);
@@ -142,120 +241,111 @@ export class Telnyx {
     this.authMethods = configureAuthMethods(authMethodsConfiguration);
     this.configuration = createConfiguration({ authMethods: authMethodsConfiguration });
 
-    this.callCommands = new Tnx.CallCommandsApi(this.configuration);
-    this.accessTokens = new Tnx.AccessTokensApi(this.configuration);
-    this.advancedOptInOptOut = new Tnx.AdvancedOptInOptOutApi(this.configuration);
-    this.authenticationProviders = new Tnx.AuthenticationProvidersApi(this.configuration);
-    this.autoResponseSettings = new Tnx.AutoResponseSettingsApi(this.configuration);
-    this.autoresponseConfigs = new Tnx.AutoresponseConfigsApi(this.configuration);
-    this.billing = new Tnx.BillingApi(this.configuration);
-    this.billingGroups = new Tnx.BillingGroupsApi(this.configuration);
-    this.brands = new Tnx.BrandsApi(this.configuration);
-    this.bucket = new Tnx.BucketApi(this.configuration);
-    this.bulkCredentials = new Tnx.BulkCredentialsApi(this.configuration);
-    this.bulkPhoneNumberCampaigns = new Tnx.BulkPhoneNumberCampaignsApi(this.configuration);
-    this.bulkSoleProprietorCreation = new Tnx.BulkSoleProprietorCreationApi(this.configuration);
-    this.businessIdentity = new Tnx.BusinessIdentityApi(this.configuration);
-    this.cDRUsageReports = new Tnx.CDRUsageReportsApi(this.configuration);
-    this.cSVDownloads = new Tnx.CSVDownloadsApi(this.configuration);
-    this.callControlApplications = new Tnx.CallControlApplicationsApi(this.configuration);
-    this.callInformation = new Tnx.CallInformationApi(this.configuration);
-    this.callRecordings = new Tnx.CallRecordingsApi(this.configuration);
-    this.campaign = new Tnx.CampaignApi(this.configuration);
-    this.channelZones = new Tnx.ChannelZonesApi(this.configuration);
-    this.conferenceCommands = new Tnx.ConferenceCommandsApi(this.configuration);
-    this.connections = new Tnx.ConnectionsApi(this.configuration);
-    this.credentialConnections = new Tnx.CredentialConnectionsApi(this.configuration);
-    this.credentials = new Tnx.CredentialsApi(this.configuration);
-    this.customerServiceRecord = new Tnx.CustomerServiceRecordApi(this.configuration);
-    this.debugging = new Tnx.DebuggingApi(this.configuration);
-    this.default = new Tnx.DefaultApi(this.configuration);
-    this.detailRecords = new Tnx.DetailRecordsApi(this.configuration);
-    this.dialogflowIntegration = new Tnx.DialogflowIntegrationApi(this.configuration);
-    this.documents = new Tnx.DocumentsApi(this.configuration);
-    this.dynamicEmergencyAddresses = new Tnx.DynamicEmergencyAddressesApi(this.configuration);
-    this.dynamicEmergencyEndpoints = new Tnx.DynamicEmergencyEndpointsApi(this.configuration);
-    this.enum = new Tnx.EnumApi(this.configuration);
-    this.error = new Tnx.ErrorApi(this.configuration);
-    this.fQDNConnections = new Tnx.FQDNConnectionsApi(this.configuration);
-    this.globalIPs = new Tnx.GlobalIPsApi(this.configuration);
-    this.iPAddresses = new Tnx.IPAddressesApi(this.configuration);
-    this.iPConnections = new Tnx.IPConnectionsApi(this.configuration);
-    this.iPs = new Tnx.IPsApi(this.configuration);
-    this.inboundChannels = new Tnx.InboundChannelsApi(this.configuration);
-    this.inventoryLevel = new Tnx.InventoryLevelApi(this.configuration);
-    this.mDRDetailReports = new Tnx.MDRDetailReportsApi(this.configuration);
-    this.mDRUsageReports = new Tnx.MDRUsageReportsApi(this.configuration);
-    this.managedAccounts = new Tnx.ManagedAccountsApi(this.configuration);
-    this.mediaStorageAPI = new Tnx.MediaStorageAPIApi(this.configuration);
-    this.messages = new Tnx.MessagesApi(this.configuration);
-    this.messagingHostedNumber = new Tnx.MessagingHostedNumberApi(this.configuration);
-    this.messagingProfiles = new Tnx.MessagingProfilesApi(this.configuration);
-    this.messagingTollfreeVerification = new Tnx.MessagingTollfreeVerificationApi(this.configuration);
-    this.messagingTollfreeVerifications = new Tnx.MessagingTollfreeVerificationsApi(this.configuration);
-    this.messagingURLDomains = new Tnx.MessagingURLDomainsApi(this.configuration);
-    this.mobileOperatorNetworks = new Tnx.MobileOperatorNetworksApi(this.configuration);
-    this.networks = new Tnx.NetworksApi(this.configuration);
-    this.notifications = new Tnx.NotificationsApi(this.configuration);
-    this.numberBackgroundJobs = new Tnx.NumberBackgroundJobsApi(this.configuration);
-    this.numberBlockOrders = new Tnx.NumberBlockOrdersApi(this.configuration);
-    this.numberBlocksBackgroundJobs = new Tnx.NumberBlocksBackgroundJobsApi(this.configuration);
-    this.numberConfigurations = new Tnx.NumberConfigurationsApi(this.configuration);
-    this.numberLookup = new Tnx.NumberLookupApi(this.configuration);
-    this.numberOrderDocuments = new Tnx.NumberOrderDocumentsApi(this.configuration);
-    this.numberOrders = new Tnx.NumberOrdersApi(this.configuration);
-    this.numberPortout = new Tnx.NumberPortoutApi(this.configuration);
-    this.numberReservations = new Tnx.NumberReservationsApi(this.configuration);
-    this.numberSearch = new Tnx.NumberSearchApi(this.configuration);
-    this.oTAUpdates = new Tnx.OTAUpdatesApi(this.configuration);
-    this.object = new Tnx.ObjectApi(this.configuration);
-    this.outboundVoiceProfiles = new Tnx.OutboundVoiceProfilesApi(this.configuration);
-    this.phoneNumberCampaigns = new Tnx.PhoneNumberCampaignsApi(this.configuration);
-    this.phoneNumberPorting = new Tnx.PhoneNumberPortingApi(this.configuration);
-    this.portingOrder = new Tnx.PortingOrderApi(this.configuration);
-    this.privateWirelessGateways = new Tnx.PrivateWirelessGatewaysApi(this.configuration);
-    this.programmableFaxApplications = new Tnx.ProgrammableFaxApplicationsApi(this.configuration);
-    this.programmableFaxCommands = new Tnx.ProgrammableFaxCommandsApi(this.configuration);
-    this.publicInternetGateways = new Tnx.PublicInternetGatewaysApi(this.configuration);
-    this.pushCredentials = new Tnx.PushCredentialsApi(this.configuration);
-    this.queueCommands = new Tnx.QueueCommandsApi(this.configuration);
-    this.recordingsCommands = new Tnx.RecordingsCommandsApi(this.configuration);
-    this.regions = new Tnx.RegionsApi(this.configuration);
-    this.registerCall = new Tnx.RegisterCallApi(this.configuration);
-    this.reporting = new Tnx.ReportingApi(this.configuration);
-    this.reports = new Tnx.ReportsApi(this.configuration);
-    this.requirementTypes = new Tnx.RequirementTypesApi(this.configuration);
-    this.requirements = new Tnx.RequirementsApi(this.configuration);
-    this.roomCompositions = new Tnx.RoomCompositionsApi(this.configuration);
-    this.roomParticipants = new Tnx.RoomParticipantsApi(this.configuration);
-    this.roomRecordings = new Tnx.RoomRecordingsApi(this.configuration);
-    this.roomSessions = new Tnx.RoomSessionsApi(this.configuration);
-    this.rooms = new Tnx.RoomsApi(this.configuration);
-    this.roomsClientTokens = new Tnx.RoomsClientTokensApi(this.configuration);
-    this.sIMCardActions = new Tnx.SIMCardActionsApi(this.configuration);
-    this.sIMCardGroupActions = new Tnx.SIMCardGroupActionsApi(this.configuration);
-    this.sIMCardGroups = new Tnx.SIMCardGroupsApi(this.configuration);
-    this.sIMCardOrders = new Tnx.SIMCardOrdersApi(this.configuration);
-    this.sIMCards = new Tnx.SIMCardsApi(this.configuration);
-    this.sharedCampaigns = new Tnx.SharedCampaignsApi(this.configuration);
-    this.shortCodes = new Tnx.ShortCodesApi(this.configuration);
-    this.teXMLApplications = new Tnx.TeXMLApplicationsApi(this.configuration);
-    this.teXMLRESTCommands = new Tnx.TeXMLRESTCommandsApi(this.configuration);
-    this.v2 = new Tnx.V2Api(this.configuration);
-    this.verifiedCallsDisplayProfile = new Tnx.VerifiedCallsDisplayProfileApi(this.configuration);
-    this.verifiedNumbers = new Tnx.VerifiedNumbersApi(this.configuration);
-    this.verify = new Tnx.VerifyApi(this.configuration);
-    this.virtualCrossConnects = new Tnx.VirtualCrossConnectsApi(this.configuration);
-    this.wDRDetailReports = new Tnx.WDRDetailReportsApi(this.configuration);
-    this.webhooks = new Tnx.WebhooksApi(this.configuration);
-    this.whatsAppBusinessAccount = new Tnx.WhatsAppBusinessAccountApi(this.configuration);
-    this.whatsAppContacts = new Tnx.WhatsAppContactsApi(this.configuration);
-    this.whatsAppDetailReports = new Tnx.WhatsAppDetailReportsApi(this.configuration);
-    this.whatsAppMedia = new Tnx.WhatsAppMediaApi(this.configuration);
-    this.whatsAppMessageTemplate = new Tnx.WhatsAppMessageTemplateApi(this.configuration);
-    this.whatsAppMessages = new Tnx.WhatsAppMessagesApi(this.configuration);
-    this.whatsAppPhoneNumber = new Tnx.WhatsAppPhoneNumberApi(this.configuration);
-    this.whatsAppUsageAggregations = new Tnx.WhatsAppUsageAggregationsApi(this.configuration);
-    this.wireGuardInterfaces = new Tnx.WireGuardInterfacesApi(this.configuration);
+    this.callCommands = new CallCommandsApi(this.configuration);
+    this.accessTokens = new AccessTokensApi(this.configuration);
+    this.advancedOptInOptOut = new AdvancedOptInOptOutApi(this.configuration);
+    this.authenticationProviders = new AuthenticationProvidersApi(this.configuration);
+    this.autoResponseSettings = new AutoResponseSettingsApi(this.configuration);
+    this.autoresponseConfigs = new AutoresponseConfigsApi(this.configuration);
+    this.billing = new BillingApi(this.configuration);
+    this.billingGroups = new BillingGroupsApi(this.configuration);
+    this.brands = new BrandsApi(this.configuration);
+    this.bucket = new BucketApi(this.configuration);
+    this.bulkCredentials = new BulkCredentialsApi(this.configuration);
+    this.bulkPhoneNumberCampaigns = new BulkPhoneNumberCampaignsApi(this.configuration);
+    this.bulkSoleProprietorCreation = new BulkSoleProprietorCreationApi(this.configuration);
+    this.businessIdentity = new BusinessIdentityApi(this.configuration);
+    this.cDRUsageReports = new CDRUsageReportsApi(this.configuration);
+    this.cSVDownloads = new CSVDownloadsApi(this.configuration);
+    this.callControlApplications = new CallControlApplicationsApi(this.configuration);
+    this.callInformation = new CallInformationApi(this.configuration);
+    this.callRecordings = new CallRecordingsApi(this.configuration);
+    this.campaign = new CampaignApi(this.configuration);
+    this.channelZones = new ChannelZonesApi(this.configuration);
+    this.conferenceCommands = new ConferenceCommandsApi(this.configuration);
+    this.connections = new ConnectionsApi(this.configuration);
+    this.credentialConnections = new CredentialConnectionsApi(this.configuration);
+    this.credentials = new CredentialsApi(this.configuration);
+    this.customerServiceRecord = new CustomerServiceRecordApi(this.configuration);
+    this.debugging = new DebuggingApi(this.configuration);
+    this.default = new DefaultApi(this.configuration);
+    this.detailRecords = new DetailRecordsApi(this.configuration);
+    this.dialogflowIntegration = new DialogflowIntegrationApi(this.configuration);
+    this.documents = new DocumentsApi(this.configuration);
+    this.dynamicEmergencyAddresses = new DynamicEmergencyAddressesApi(this.configuration);
+    this.dynamicEmergencyEndpoints = new DynamicEmergencyEndpointsApi(this.configuration);
+    this.enum = new EnumApi(this.configuration);
+    this.error = new ErrorApi(this.configuration);
+    this.fQDNConnections = new FQDNConnectionsApi(this.configuration);
+    this.globalIPs = new GlobalIPsApi(this.configuration);
+    this.iPAddresses = new IPAddressesApi(this.configuration);
+    this.iPConnections = new IPConnectionsApi(this.configuration);
+    this.iPs = new IPsApi(this.configuration);
+    this.inboundChannels = new InboundChannelsApi(this.configuration);
+    this.inventoryLevel = new InventoryLevelApi(this.configuration);
+    this.mDRDetailReports = new MDRDetailReportsApi(this.configuration);
+    this.mDRUsageReports = new MDRUsageReportsApi(this.configuration);
+    this.managedAccounts = new ManagedAccountsApi(this.configuration);
+    this.mediaStorageAPI = new MediaStorageAPIApi(this.configuration);
+    this.messages = new MessagesApi(this.configuration);
+    this.messagingHostedNumber = new MessagingHostedNumberApi(this.configuration);
+    this.messagingProfiles = new MessagingProfilesApi(this.configuration);
+    this.messagingTollfreeVerification = new MessagingTollfreeVerificationApi(this.configuration);
+    this.messagingTollfreeVerifications = new MessagingTollfreeVerificationsApi(this.configuration);
+    this.messagingURLDomains = new MessagingURLDomainsApi(this.configuration);
+    this.mobileOperatorNetworks = new MobileOperatorNetworksApi(this.configuration);
+    this.networks = new NetworksApi(this.configuration);
+    this.notifications = new NotificationsApi(this.configuration);
+    this.numberBackgroundJobs = new NumberBackgroundJobsApi(this.configuration);
+    this.numberBlockOrders = new NumberBlockOrdersApi(this.configuration);
+    this.numberBlocksBackgroundJobs = new NumberBlocksBackgroundJobsApi(this.configuration);
+    this.numberConfigurations = new NumberConfigurationsApi(this.configuration);
+    this.numberLookup = new NumberLookupApi(this.configuration);
+    this.numberOrderDocuments = new NumberOrderDocumentsApi(this.configuration);
+    this.numberOrders = new NumberOrdersApi(this.configuration);
+    this.numberPortout = new NumberPortoutApi(this.configuration);
+    this.numberReservations = new NumberReservationsApi(this.configuration);
+    this.numberSearch = new NumberSearchApi(this.configuration);
+    this.oTAUpdates = new OTAUpdatesApi(this.configuration);
+    this.object = new ObjectApi(this.configuration);
+    this.outboundVoiceProfiles = new OutboundVoiceProfilesApi(this.configuration);
+    this.phoneNumberCampaigns = new PhoneNumberCampaignsApi(this.configuration);
+    this.phoneNumberPorting = new PhoneNumberPortingApi(this.configuration);
+    this.portingOrder = new PortingOrderApi(this.configuration);
+    this.privateWirelessGateways = new PrivateWirelessGatewaysApi(this.configuration);
+    this.programmableFaxApplications = new ProgrammableFaxApplicationsApi(this.configuration);
+    this.programmableFaxCommands = new ProgrammableFaxCommandsApi(this.configuration);
+    this.publicInternetGateways = new PublicInternetGatewaysApi(this.configuration);
+    this.pushCredentials = new PushCredentialsApi(this.configuration);
+    this.queueCommands = new QueueCommandsApi(this.configuration);
+    this.recordingsCommands = new RecordingsCommandsApi(this.configuration);
+    this.regions = new RegionsApi(this.configuration);
+    this.registerCall = new RegisterCallApi(this.configuration);
+    this.reporting = new ReportingApi(this.configuration);
+    this.reports = new ReportsApi(this.configuration);
+    this.requirementTypes = new RequirementTypesApi(this.configuration);
+    this.requirements = new RequirementsApi(this.configuration);
+    this.roomCompositions = new RoomCompositionsApi(this.configuration);
+    this.roomParticipants = new RoomParticipantsApi(this.configuration);
+    this.roomRecordings = new RoomRecordingsApi(this.configuration);
+    this.roomSessions = new RoomSessionsApi(this.configuration);
+    this.rooms = new RoomsApi(this.configuration);
+    this.roomsClientTokens = new RoomsClientTokensApi(this.configuration);
+    this.sIMCardActions = new SIMCardActionsApi(this.configuration);
+    this.sIMCardGroupActions = new SIMCardGroupActionsApi(this.configuration);
+    this.sIMCardGroups = new SIMCardGroupsApi(this.configuration);
+    this.sIMCardOrders = new SIMCardOrdersApi(this.configuration);
+    this.sIMCards = new SIMCardsApi(this.configuration);
+    this.sharedCampaigns = new SharedCampaignsApi(this.configuration);
+    this.shortCodes = new ShortCodesApi(this.configuration);
+    this.teXMLApplications = new TeXMLApplicationsApi(this.configuration);
+    this.teXMLRESTCommands = new TeXMLRESTCommandsApi(this.configuration);
+    this.v2 = new V2Api(this.configuration);
+    this.verifiedCallsDisplayProfile = new VerifiedCallsDisplayProfileApi(this.configuration);
+    this.verifiedNumbers = new VerifiedNumbersApi(this.configuration);
+    this.verify = new VerifyApi(this.configuration);
+    this.virtualCrossConnects = new VirtualCrossConnectsApi(this.configuration);
+    this.wDRDetailReports = new WDRDetailReportsApi(this.configuration);
+    this.webhooks = new WebhooksApi(this.configuration);
   }
 }
