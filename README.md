@@ -7,14 +7,10 @@ Deno module for Telnyx API based on OpenAPI 3 spec
 ```typescript
 import { Telnyx } from "telnyx";
 
-const telnyx = new Telnyx({
-  TOKEN: "KEY******",
-});
-
+const telnyx = new Telnyx('TELNYX_API_KEY');
 
 // List faxes
 const faxes = await telnyx.programmableFaxCommands.listFaxes();
-
 
 console.log(faxes);
 ```
