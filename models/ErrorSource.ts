@@ -29,7 +29,7 @@ export class ErrorSource {
             "name": "pointer",
             "baseName": "pointer",
             "type": "string",
-            "format": ""
+            "format": "json-pointer"
         },
         {
             "name": "parameter",

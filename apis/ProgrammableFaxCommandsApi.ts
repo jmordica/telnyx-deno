@@ -13,7 +13,7 @@ import { Fax } from '../models/Fax.ts';
 import { GetFaxResponse } from '../models/GetFaxResponse.ts';
 import { ListFaxesResponse } from '../models/ListFaxesResponse.ts';
 import { RefreshFaxResponse } from '../models/RefreshFaxResponse.ts';
-//import { SendFaxMultipartRequest } from '../models/SendFaxMultipartRequest.ts';
+import { SendFaxMultipartRequest } from '../models/SendFaxMultipartRequest.ts';
 import { SendFaxRequest } from '../models/SendFaxRequest.ts';
 import { SuccessfulResponseUponAcceptingCancelFaxCommand } from '../models/SuccessfulResponseUponAcceptingCancelFaxCommand.ts';
 

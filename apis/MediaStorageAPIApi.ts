@@ -11,9 +11,9 @@ import {SecurityAuthentication} from '../auth/auth.ts';
 import { Errors } from '../models/Errors.ts';
 import { ListOfMediaResourcesResponse } from '../models/ListOfMediaResourcesResponse.ts';
 import { MediaResourceResponse } from '../models/MediaResourceResponse.ts';
-//import { UpdateMediaMultipartRequest } from '../models/UpdateMediaMultipartRequest.ts';
+import { UpdateMediaMultipartRequest } from '../models/UpdateMediaMultipartRequest.ts';
 import { UpdateMediaRequest } from '../models/UpdateMediaRequest.ts';
-//import { UploadMediaMultipartRequest } from '../models/UploadMediaMultipartRequest.ts';
+import { UploadMediaMultipartRequest } from '../models/UploadMediaMultipartRequest.ts';
 import { UploadMediaRequest } from '../models/UploadMediaRequest.ts';
 
 /**

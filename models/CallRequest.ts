@@ -99,6 +99,10 @@ export class CallRequest {
     */
     'streamTrack'?: CallRequestStreamTrackEnum;
     /**
+    * Generate silence RTP packets when no transmission available.
+    */
+    'sendSilenceWhenIdle'?: boolean;
+    /**
     * Use this field to override the URL for which Telnyx will send subsequent webhooks to for this call.
     */
     'webhookUrl'?: string;
@@ -265,6 +269,12 @@ export class CallRequest {
             "name": "streamTrack",
             "baseName": "stream_track",
             "type": "CallRequestStreamTrackEnum",
+            "format": ""
+        },
+        {
+            "name": "sendSilenceWhenIdle",
+            "baseName": "send_silence_when_idle",
+            "type": "boolean",
             "format": ""
         },
         {

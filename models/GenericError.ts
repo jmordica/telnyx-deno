@@ -10,14 +10,14 @@
  * Do not edit the class manually.
  */
 
-import { UpdateOutboundChannelsDefaultResponseErrorsInnerSource } from '../models/UpdateOutboundChannelsDefaultResponseErrorsInnerSource.ts';
+import { ErrorSource } from '../models/ErrorSource.ts';
 import { HttpFile } from '../http/http.ts';
 
 export class GenericError {
     'code'?: number;
     'title'?: string;
     'detail'?: string;
-    'source'?: UpdateOutboundChannelsDefaultResponseErrorsInnerSource;
+    'source'?: ErrorSource;
     'meta'?: any;
 
     static readonly discriminator: string | undefined = undefined;
@@ -44,7 +44,7 @@ export class GenericError {
         {
             "name": "source",
             "baseName": "source",
-            "type": "UpdateOutboundChannelsDefaultResponseErrorsInnerSource",
+            "type": "ErrorSource",
             "format": ""
         },
         {

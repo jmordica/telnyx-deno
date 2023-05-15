@@ -15,37 +15,47 @@ import { HttpFile } from '../http/http.ts';
 /**
 * 
 */
-export class UploadMedia {
+export class MediaRequestBody {
     /**
-    * Identifies the type of the resource.
+    * The user\'s WhatsApp ID.
     */
-    'recordType'?: UploadMediaRecordTypeEnum;
-    'id'?: string;
+    'whatsappUserId': string;
+    /**
+    * The content-type of the uplaoded media.
+    */
+    'mediaContentType': string;
+    /**
+    * The media to store with WhatsApp.
+    */
+    'uploadFile': HttpFile;
 
     static readonly discriminator: string | undefined = undefined;
 
     static readonly attributeTypeMap: Array<{name: string, baseName: string, type: string, format: string}> = [
         {
-            "name": "recordType",
-            "baseName": "record_type",
-            "type": "UploadMediaRecordTypeEnum",
+            "name": "whatsappUserId",
+            "baseName": "whatsapp_user_id",
+            "type": "string",
             "format": ""
         },
         {
-            "name": "id",
-            "baseName": "id",
+            "name": "mediaContentType",
+            "baseName": "media_content_type",
             "type": "string",
             "format": ""
+        },
+        {
+            "name": "uploadFile",
+            "baseName": "upload_file",
+            "type": "HttpFile",
+            "format": "binary"
         }    ];
 
     static getAttributeTypeMap() {
-        return UploadMedia.attributeTypeMap;
+        return MediaRequestBody.attributeTypeMap;
     }
 
     public constructor() {
     }
 }
-
-
-export type UploadMediaRecordTypeEnum = "whatsapp_media_id" ;
 

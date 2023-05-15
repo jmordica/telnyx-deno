@@ -10,15 +10,15 @@
  * Do not edit the class manually.
  */
 
+import { ErrorSource } from '../models/ErrorSource.ts';
 import { UnexpectedErrorAllOfMeta } from '../models/UnexpectedErrorAllOfMeta.ts';
-import { UpdateOutboundChannelsDefaultResponseErrorsInnerSource } from '../models/UpdateOutboundChannelsDefaultResponseErrorsInnerSource.ts';
 import { HttpFile } from '../http/http.ts';
 
 export class UnexpectedError {
     'code'?: any | null;
     'title'?: any | null;
     'detail'?: any | null;
-    'source'?: UpdateOutboundChannelsDefaultResponseErrorsInnerSource;
+    'source'?: ErrorSource;
     'meta'?: UnexpectedErrorAllOfMeta;
 
     static readonly discriminator: string | undefined = undefined;
@@ -45,7 +45,7 @@ export class UnexpectedError {
         {
             "name": "source",
             "baseName": "source",
-            "type": "UpdateOutboundChannelsDefaultResponseErrorsInnerSource",
+            "type": "ErrorSource",
             "format": ""
         },
         {
